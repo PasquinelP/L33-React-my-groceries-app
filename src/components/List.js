@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ListItem from './ListItem'
 
 class List extends Component {
   constructor() {
@@ -9,11 +10,11 @@ class List extends Component {
   render() {
     return (
       <ul>
-        <li>Melk</li>
-        <li>Brood</li>
-        <li>Honing</li>
+        <ListItem title="Melk" />
+        <ListItem title="Brood" />
+        <ListItem title="Rijst" />
       </ul>
-    )}
+    );}
     
 }
 
