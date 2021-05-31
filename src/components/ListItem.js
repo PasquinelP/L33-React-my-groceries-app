@@ -2,7 +2,7 @@ import React from 'react'
 
 function ListItem(props) {
   return (
-    <li>{props.title}</li>
+    <li>{props.item.title}</li>
   )
 }
 
