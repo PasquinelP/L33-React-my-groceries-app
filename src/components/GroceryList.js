@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import List from "./List";
 
-class GroceryList extends Component {
-  render() {
+const GroceryList = (props) => {
+
     return (
       <div>
-        <List />
+        <List items={props.groceryItems} />
       </div>
     );
-  }
 }
 
 export default GroceryList;

@@ -12,9 +12,8 @@ class Container extends Component {
         { id: 3, title: "Rijst" },
       ],
       shoppingListItems: [
-        { id: 1, title: "Melk" },
-        { id: 2, title: "Brood" },
-        { id: 3, title: "Rijst" },
+        { id: 1, title: "Shop test 1" },
+        { id: 2, title: "Shop test 2" },
       ],
     };
   }
@@ -22,8 +21,8 @@ class Container extends Component {
   render() {
     return (
       <div>
-        <GroceryList />
-        <ShoppingCart />
+        <GroceryList groceryItems={this.state.groceryItems} />
+        <ShoppingCart shoppingListItems={this.state.shoppingListItems} />
       </div>
     );
   }

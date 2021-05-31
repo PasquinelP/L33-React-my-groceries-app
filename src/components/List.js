@@ -3,10 +3,9 @@ import ListItem from './ListItem'
 
 class List extends Component {
 
-
   render() {
-    const listItem = this.state.groceryItems.map((groceryItem) => (
-      <ListItem key={groceryItem.id} item={groceryItem} />
+    const listItem = this.props.items.map((item) => (
+      <ListItem key={item.id} item={item} />
     ))
     return (
       <ul>

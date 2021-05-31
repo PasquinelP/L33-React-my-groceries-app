@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import List from "./List";
 
-class ShoppingCart extends Component {
-  render() {
+const ShoppingCart = (props) => {
+  
     return (
       <div>
-        <List />
+        <List items={props.shoppingListItems} />
       </div>
     );
-  }
 }
 
 export default ShoppingCart;
