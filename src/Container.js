@@ -12,15 +12,27 @@ class Container extends Component {
         { id: 3, title: "Rijst" },
       ],
       shoppingListItems: [
-        { id: 1, title: "Shop test 1" },
-        { id: 2, title: "Shop test 2" },
+        { id: 1, title: "Shop test 1", amount: 1 },
+        { id: 2, title: "Shop test 2", amount: 1 },
       ],
     };
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
   }
 
    handleClickGroceryItem(title) {
-    console.log("Clicked", title)
+     console.log("Deze is geklikt: ", title)
+     this.setState((prevState) => {
+       const shoppingListItems = [...prevState.shoppingListItems]
+       shoppingListItems.push({
+         id: shoppingListItems.length + 1,
+         title: title,
+         amount: 1,
+       });
+       console.log(shoppingListItems);
+       return {
+         shoppingListItems: shoppingListItems,
+       };
+     })
   }
 
   render() {
@@ -28,7 +40,7 @@ class Container extends Component {
       <div>
         <GroceryList
           groceryItems={this.state.groceryItems}
-          handleClickGroceryItem={this.handleClickGroceryItem}
+          clickItem={this.handleClickGroceryItem}
         />
         <ShoppingCart shoppingListItems={this.state.shoppingListItems} />
       </div>

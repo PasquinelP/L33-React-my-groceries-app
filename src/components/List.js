@@ -8,7 +8,7 @@ class List extends Component {
       <ListItem
         key={item.id}
         item={item}
-        handleClickGroceryItem={this.props.handleClickGroceryItem}
+        click={this.props.click}
       />
     ));
     return (

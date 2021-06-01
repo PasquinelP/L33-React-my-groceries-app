@@ -7,7 +7,7 @@ const GroceryList = (props) => {
       <div>
         <List
           items={props.groceryItems}
-          handleClickGroceryItem={props.handleClickGroceryItem}
+          click={props.clickItem}
         />
       </div>
     );

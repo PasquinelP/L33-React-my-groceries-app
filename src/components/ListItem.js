@@ -5,7 +5,7 @@ function ListItem(props) {
     <li
       key={props.item.id}
       value={props.item.title}
-      onClick={() => props.handleClickGroceryItem(props.item.title)}
+      onClick={() => props.click(props.item.title)}
     >
       {props.item.title}
     </li>
