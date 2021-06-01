@@ -5,8 +5,12 @@ class List extends Component {
 
   render() {
     const listItem = this.props.items.map((item) => (
-      <ListItem key={item.id} item={item} />
-    ))
+      <ListItem
+        key={item.id}
+        item={item}
+        handleClickGroceryItem={this.props.handleClickGroceryItem}
+      />
+    ));
     return (
       <ul>
         {listItem}
