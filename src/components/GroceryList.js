@@ -5,6 +5,7 @@ const GroceryList = (props) => {
 
     return (
       <div>
+        <h2>Boodschappenlijst</h2>
         <List
           items={props.groceryItems}
           click={props.clickItem}
