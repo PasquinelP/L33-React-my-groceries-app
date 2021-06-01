@@ -17,6 +17,7 @@ class Container extends Component {
       ],
     };
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
+    this.emptyCart = this.emptyCart.bind(this)
   }
 
    handleClickGroceryItem(title) {
@@ -35,6 +36,10 @@ class Container extends Component {
      })
   }
 
+  emptyCart() {
+    this.setState({shoppingListItems: []})
+  }
+
   render() {
     return (
       <div>
@@ -42,7 +47,7 @@ class Container extends Component {
           groceryItems={this.state.groceryItems}
           clickItem={this.handleClickGroceryItem}
         />
-        <ShoppingCart shoppingListItems={this.state.shoppingListItems} />
+        <ShoppingCart shoppingListItems={this.state.shoppingListItems} emptyCart={this.emptyCart} />
       </div>
     );
   }
