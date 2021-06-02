@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const InputField = (props) => {
+class InputField extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  return (
-    <form onSubmit={props.onSubmit}>
-      <input
-        type="text"
-        name="title"
-        placeholder="Vul je boodschappen in"
-      />
-      <button type="submit">Voeg toe</button>
-    </form>
-  );
+  handleChange(event) {
+    this.setState({ title: event.target.value });
+  }
 
 
-
+  render() {
+    return (
+        <form onSubmit={this.props.onSubmit}>
+          <input
+            type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChange}
+            placeholder="Vul je boodschappen in"
+          />
+          <button type="submit">Voeg toe</button>
+        </form>
+    );
+  }
 }
 
 export default InputField

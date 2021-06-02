@@ -41,18 +41,19 @@ class Container extends Component {
     this.setState({ shoppingListItems: [] });
   }
 
-  handleClickAddGrocery(title) {
-    console.log("Form was submitted")
-    // this.setState((prevState) => {
-    //   const groceryItems = [...prevState.groceryItems]
-    //   groceryItems.push({
-    //     id: groceryItems.length + 1,
-    //     title: title,
-    //   })
-    //   return {
-    //     groceryItems: groceryItems
-    //   }
-    // })
+  handleClickAddGrocery(event) {
+    event.preventDefault();
+    const title = event.target.title.value;
+    this.setState((prevState) => {
+      const groceryItems = [...prevState.groceryItems]
+      groceryItems.push({
+        id: groceryItems.length + 1,
+        title: title,
+      })
+      return {
+        groceryItems: groceryItems
+      }
+    })
   }
 
   render() {
