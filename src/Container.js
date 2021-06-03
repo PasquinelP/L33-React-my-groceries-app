@@ -46,16 +46,18 @@ class Container extends Component {
   handleClickAddGrocery(event) {
     event.preventDefault();
     const title = event.target.title.value;
-    this.setState((prevState) => {
-      const groceryItems = [...prevState.groceryItems]
-      groceryItems.push({
-        id: groceryItems.length + 1,
-        title: title,
+    if (title !== undefined && title !== null && title.length > 0) {
+      this.setState((prevState) => {
+        const groceryItems = [...prevState.groceryItems]
+        groceryItems.push({
+          id: groceryItems.length + 1,
+          title: title,
+        })
+        return {
+          groceryItems: groceryItems
+        }
       })
-      return {
-        groceryItems: groceryItems
-      }
-    })
+    }
   }
 
   render() {
