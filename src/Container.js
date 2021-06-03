@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Header from './components/Header';
 import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
+import Footer from './components/Footer';
 
 class Container extends Component {
   constructor() {
@@ -58,16 +60,20 @@ class Container extends Component {
 
   render() {
     return (
-      <div>
-        <GroceryList
-          groceryItems={this.state.groceryItems}
-          clickItem={this.handleClickGroceryItem}
-          addGrocery={this.handleClickAddGrocery}
-        />
-        <ShoppingCart
-          shoppingListItems={this.state.shoppingListItems}
-          emptyCart={this.emptyCart}
-        />
+      <div className="container">
+        <Header />
+        <main>
+          <GroceryList
+            groceryItems={this.state.groceryItems}
+            clickItem={this.handleClickGroceryItem}
+            addGrocery={this.handleClickAddGrocery}
+          />
+          <ShoppingCart
+            shoppingListItems={this.state.shoppingListItems}
+            emptyCart={this.emptyCart}
+          />
+        </main>
+        <Footer />
       </div>
     );
   }

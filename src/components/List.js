@@ -12,7 +12,7 @@ class List extends Component {
       />
     ));
     return (
-      <ul>
+      <ul className="list">
         {listItem}
       </ul>
     );}

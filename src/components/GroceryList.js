@@ -5,9 +5,11 @@ import List from "./List";
 const GroceryList = (props) => {
 
     return (
-      <div>
-        <h2>Boodschappenlijst</h2>
-        <InputField onSubmit={props.addGrocery} />
+      <div className="grocerylist">
+        <header>
+          <h2>Boodschappenlijst</h2>
+          <InputField onSubmit={props.addGrocery} />
+        </header>
         <List
           items={props.groceryItems}
           click={props.clickItem}
