@@ -9,6 +9,7 @@ class List extends Component {
         key={item.id}
         item={item}
         click={this.props.click}
+        readonly={this.props.readonly}
       />
     ));
     return (

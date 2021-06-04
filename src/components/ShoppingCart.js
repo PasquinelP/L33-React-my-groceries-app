@@ -11,7 +11,7 @@ const ShoppingCart = (props) => {
             Leeg de winkelmand
           </button>
         </header>
-        <List items={props.shoppingListItems} />
+        <List items={props.shoppingListItems} readonly={true} />
       </div>
     );
 }

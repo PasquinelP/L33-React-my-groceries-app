@@ -67,6 +67,8 @@ ul {
 
 .shoppingcart li {
   background-color: #b5d6e4;
+  display: flex;
+  justify-content: space-between;
 }
 
 .shoppingcart li:nth-child(even) {
