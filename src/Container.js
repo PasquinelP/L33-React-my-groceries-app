@@ -79,6 +79,7 @@ addAmountToItem(title) {
         };
       });
     }
+    event.target.title.value = "";
   }
 
   render() {
