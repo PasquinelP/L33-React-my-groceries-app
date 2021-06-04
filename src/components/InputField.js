@@ -16,16 +16,22 @@ class InputField extends Component {
 
   render() {
     return (
-        <form onSubmit={this.props.onSubmit}>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={this.handleChange}
-            placeholder="Vul je boodschappen in"
-          />
-          <button type="submit">Voeg toe</button>
-        </form>
+      // make sure to setState to empty title to clear input field after submit
+      <form
+        onSubmit={(e) => {
+          this.props.onSubmit(e, this.state.title);
+          this.setState({ title: "" });
+        }}
+      >
+        <input
+          type="text"
+          name="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+          placeholder="Vul je boodschappen in"
+        />
+        <button type="submit">Voeg toe</button>
+      </form>
     );
   }
 }

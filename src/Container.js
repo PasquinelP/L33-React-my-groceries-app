@@ -24,16 +24,16 @@ class Container extends Component {
     this.addAmountToItem = this.addAmountToItem.bind(this);
   }
 
-addAmountToItem(title) {
+  addAmountToItem(title) {
     const currentShoppingList = [...this.state.shoppingListItems];
-      const newShoppingList = currentShoppingList.map(item => {
-        if (item.title === title) {
-          item.amount++;
-        }
-        return item;
-      });
-      this.setState({ shoppingListItems: newShoppingList });
-  };
+    const newShoppingList = currentShoppingList.map((item) => {
+      if (item.title === title) {
+        item.amount++;
+      }
+      return item;
+    });
+    this.setState({ shoppingListItems: newShoppingList });
+  }
 
   handleClickGroceryItem(title) {
     console.log("Deze is geklikt: ", title);
@@ -43,15 +43,15 @@ addAmountToItem(title) {
         (item) => item.title === title
       );
       console.log("Shoppinglistitem is: ", shoppingListItem);
-      
-        if (shoppingListItem.length === 0) {
+
+      if (shoppingListItem.length === 0) {
         shoppingListItems.push({
           id: shoppingListItems.length + 1,
           title: title,
           amount: 1,
         });
       } else {
-        this.addAmountToItem(title)
+        this.addAmountToItem(title);
       }
       console.log(shoppingListItems);
       return {
@@ -64,9 +64,8 @@ addAmountToItem(title) {
     this.setState({ shoppingListItems: [] });
   }
 
-  handleClickAddGrocery(event) {
+  handleClickAddGrocery(event, title) {
     event.preventDefault();
-    const title = event.target.title.value;
     if (title !== undefined && title !== null && title.length > 0) {
       this.setState((prevState) => {
         const groceryItems = [...prevState.groceryItems];
@@ -79,7 +78,6 @@ addAmountToItem(title) {
         };
       });
     }
-    event.target.title.value = "";
   }
 
   render() {
