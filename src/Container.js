@@ -13,10 +13,7 @@ class Container extends Component {
         { id: 2, title: "Brood" },
         { id: 3, title: "Rijst" },
       ],
-      shoppingListItems: [
-        { id: 1, title: "Shop test 1", amount: 1 },
-        { id: 2, title: "Shop test 2", amount: 1 },
-      ],
+      shoppingListItems: [ ],
     };
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
     this.emptyCart = this.emptyCart.bind(this);
