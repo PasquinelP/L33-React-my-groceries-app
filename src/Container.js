@@ -13,7 +13,7 @@ class Container extends Component {
         { id: 2, title: "Brood" },
         { id: 3, title: "Rijst" },
       ],
-      shoppingListItems: [ ],
+      shoppingListItems: [],
     };
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
     this.emptyCart = this.emptyCart.bind(this);
@@ -21,6 +21,9 @@ class Container extends Component {
     this.addAmountToItem = this.addAmountToItem.bind(this);
   }
 
+  // check if item is already in shoppingList
+  // if so, on clicking same grocery item again will not add it again to he list
+  // but will increment the count of amount of the item in shopping list
   addAmountToItem(title) {
     const currentShoppingList = [...this.state.shoppingListItems];
     const newShoppingList = currentShoppingList.map((item) => {
@@ -32,23 +35,24 @@ class Container extends Component {
     this.setState({ shoppingListItems: newShoppingList });
   }
 
+  // check if item in grocery list is clicked
+  // check if clicked item allready exists in shopping list
+  // if not, add clicked item to shopping list
+  // if it is, call addAmountToItem to only increment the amount of the item in shopping list
   handleClickGroceryItem(title) {
-    console.log("Deze is geklikt: ", title);
     const shoppingListItems = [...this.state.shoppingListItems];
     const shoppingListItem = shoppingListItems.filter(
       (item) => item.title === title
     );
-    console.log("Shoppinglistitem is: ", shoppingListItem);
 
     if (shoppingListItem.length === 0) {
       this.setState((prevState) => {
-        const newShoppingList = prevState.shoppingListItems
+        const newShoppingList = prevState.shoppingListItems;
         newShoppingList.push({
           id: newShoppingList.length + 1,
           title: title,
           amount: 1,
         });
-        console.log("Nieuwe shoppinglist is: ", newShoppingList);
         return {
           shoppingListItems: newShoppingList,
         };
@@ -56,13 +60,16 @@ class Container extends Component {
     } else {
       this.addAmountToItem(title);
     }
-    console.log("Shoppinglist in state is nu: ", this.state.shoppingListItems);
   }
 
+  // setState of shoppingListItems to empty array to clear list
   emptyCart() {
     this.setState({ shoppingListItems: [] });
   }
 
+  // get value of item entered in input
+  // add the new item to grocery items list
+  // prevent page to reload on submitting form with preventDefault();
   handleClickAddGrocery(event, title) {
     event.preventDefault();
     if (title !== undefined && title !== null && title.length > 0) {

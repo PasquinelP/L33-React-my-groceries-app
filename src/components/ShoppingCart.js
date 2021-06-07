@@ -11,6 +11,8 @@ const ShoppingCart = (props) => {
             Leeg de winkelmand
           </button>
         </header>
+        // send readonly prop to now if we are dealing with a shoppingList
+        // so we can conditional render the amount on the list item
         <List items={props.shoppingListItems} readonly={true} />
       </div>
     );

@@ -3,6 +3,7 @@ import ListItem from './ListItem'
 
 class List extends Component {
 
+  // go through the list to construct a listitem for ech item in the groceryItems array
   render() {
     const listItem = this.props.items.map((item) => (
       <ListItem
