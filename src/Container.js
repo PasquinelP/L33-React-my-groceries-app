@@ -34,27 +34,29 @@ class Container extends Component {
 
   handleClickGroceryItem(title) {
     console.log("Deze is geklikt: ", title);
-    this.setState((prevState) => {
-      const shoppingListItems = [...prevState.shoppingListItems];
-      const shoppingListItem = shoppingListItems.filter(
-        (item) => item.title === title
-      );
-      console.log("Shoppinglistitem is: ", shoppingListItem);
+    const shoppingListItems = [...this.state.shoppingListItems];
+    const shoppingListItem = shoppingListItems.filter(
+      (item) => item.title === title
+    );
+    console.log("Shoppinglistitem is: ", shoppingListItem);
 
-      if (shoppingListItem.length === 0) {
-        shoppingListItems.push({
-          id: shoppingListItems.length + 1,
+    if (shoppingListItem.length === 0) {
+      this.setState((prevState) => {
+        const newShoppingList = prevState.shoppingListItems
+        newShoppingList.push({
+          id: newShoppingList.length + 1,
           title: title,
           amount: 1,
         });
-      } else {
-        this.addAmountToItem(title);
-      }
-      console.log(shoppingListItems);
-      return {
-        shoppingListItems: shoppingListItems,
-      };
-    });
+        console.log("Nieuwe shoppinglist is: ", newShoppingList);
+        return {
+          shoppingListItems: newShoppingList,
+        };
+      });
+    } else {
+      this.addAmountToItem(title);
+    }
+    console.log("Shoppinglist in state is nu: ", this.state.shoppingListItems);
   }
 
   emptyCart() {
