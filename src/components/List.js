@@ -1,24 +1,22 @@
-import React, {Component} from "react";
+import React from "react";
 import ListItem from './ListItem'
 
-class List extends Component {
+const List = (props) => {
 
   // go through the list to construct a listitem for ech item in the groceryItems array
-  render() {
-    const listItem = this.props.items.map((item) => (
+    const listItem = props.items.map((item) => (
       <ListItem
         key={item.id}
         item={item}
-        click={this.props.click}
-        readonly={this.props.readonly}
+        click={props.click}
+        readonly={props.readonly}
       />
     ));
     return (
       <ul className="list">
         {listItem}
       </ul>
-    );}
-    
+    );
 }
 
 export default List;
