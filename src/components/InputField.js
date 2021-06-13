@@ -1,6 +1,9 @@
-import React, { useState }  from 'react'
+import React, { useState }  from 'react';
+import useApp from "./useApp";
 
 const InputField = (props) => {
+
+  const { handleClickAddGrocery } = useApp();
 
   const [title, setTitle] = useState("");
 
@@ -12,7 +15,7 @@ const InputField = (props) => {
     // make sure to setTitle to empty title to clear input field after submit
     <form
       onSubmit={(e) => {
-        props.onSubmit(e, title);
+        handleClickAddGrocery(e, title);
         setTitle("");
       }}
     >

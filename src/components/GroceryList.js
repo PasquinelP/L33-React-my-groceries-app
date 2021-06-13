@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import InputField from "./InputField";
 import List from "./List";
+import { AppContext } from "./AppContext";
 
 const GroceryList = (props) => {
+  const {groceryItems} = useContext(AppContext);
 
     return (
       <div className="grocerylist">
         <header>
           <h2>Boodschappenlijst</h2>
-          <InputField onSubmit={props.addGrocery} />
+          <InputField />
         </header>
-        <List
-          items={props.groceryItems}
-          click={props.clickItem}
-        />
+        <List items={groceryItems} />
       </div>
     );
 }
