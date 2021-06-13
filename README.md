@@ -1,5 +1,12 @@
 # React Opdracht - Boodschappenlijst & Winkelmand
 
+## Versies
+Deze opdracht is in eerste instantie gemaakt met gebruik van setState en class components. Deze versie staat de main branch: [setState en class components](https://github.com/PasquinelP/L33-React-my-groceries-app/tree/main).
+
+Om meer te oefenen met React, heb ik deze opdracht vervolgens ook gemaakt met functionele components en de useState hook en met het gebruik van useContext en custom hooks.
+Deze versie staan op de volgende branches:
+- Functionele components en de useState hook: [useState-hook-version](https://github.com/PasquinelP/L33-React-my-groceries-app/tree/useState-hook-version)
+- useContext en custom hook: deze branch (useContext-version)
 ## Introductie
 
 In deze opdracht ga je een winkelmand maken waar je items aan kunt toevoegen vanaf je boodschappenlijst. De opdracht is opgedeeld in verschillende delen, die steeds een stuk moeilijker worden en minder expliciet.
