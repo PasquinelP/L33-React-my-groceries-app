@@ -3,7 +3,7 @@ import InputField from "./InputField";
 import List from "./List";
 import { AppContext } from "./AppContext";
 
-const GroceryList = (props) => {
+const GroceryList = () => {
   const {groceryItems} = useContext(AppContext);
 
     return (
