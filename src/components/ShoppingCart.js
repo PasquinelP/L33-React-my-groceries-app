@@ -1,11 +1,9 @@
-import React, {useContext} from "react";
+import React from "react";
 import List from "./List";
-import { AppContext } from "./AppContext";
 import useApp from "./useApp";
 
 const ShoppingCart = () => {
-  const { emptyCart } = useApp();
-  const {shoppingListItems} = useContext(AppContext);
+  const { emptyCart, shoppingListItems } = useApp();
 
     return (
       <div className="shoppingcart">

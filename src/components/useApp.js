@@ -66,6 +66,10 @@ const useApp = () => {
   };
 
   return {
+    groceryItems,
+    setGroceryItems,
+    shoppingListItems,
+    setShoppingListItems,
     addAmountToItem,
     handleClickGroceryItem,
     emptyCart,
